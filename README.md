@@ -35,7 +35,7 @@ ssh -i yungling.pem ubuntu@ec2-52-220-28-88.ap-southeast-1.compute.amazonaws.com
 - Type the command "sudo apt update && sudo apt upgrade" into CLI.
 - Type the command "sudo apt install ssh apache2" into CLI.
 - Type the command "ip addr" and copy ip address into Elatic IP page in AWS.
-- 
+
 # 6. Set up static IP
 - Go to Elastic IP.
 - Allocate Elastic IP address and associate it with EC2 instance.
