@@ -2,10 +2,10 @@ ssh -i yungling.pem ubuntu@ec2-52-220-28-88.ap-southeast-1.compute.amazonaws.com
 
 # Jadey's Bakery Project Proposal 🥖
 
-**Student ID:** 35505126
-**IP Address: 52.220.28.88**
-**© 2025 Jadey's Bakery**  
-**Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)**
+**Student ID:** 35505126  
+**IP Address: 52.220.28.88**  
+**© 2025 Jadey's Bakery**   
+**Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)**  
 
 # 1. Launch EC2 instance in AWS
 - Launch an instance in Asia Pacific (Singapore).
@@ -54,7 +54,7 @@ ssh -i yungling.pem ubuntu@ec2-52-220-28-88.ap-southeast-1.compute.amazonaws.com
 
 # 9. Install SSL with Certbot
 - Type the command "sudo snap install core" into CLI. This allows installs snap.
-- Type the command "sudo snap refresh core" into CLI. .
+- Type the command "sudo snap refresh core" into CLI. 
 - Type the command "sudo snap install --classic certbot" into CLI. This installs in classic mode.
 - Type the command "sudo certbot --apache" into CLI. This automatically obtains and installs an SSL certificate for the apache server.
 - Type the command "sudo certbot renew --dry-run" into CLI. This simulate the automatic renewal process to verify it works.
