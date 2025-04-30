@@ -3,7 +3,7 @@ ssh -i yungling.pem ubuntu@ec2-52-220-28-88.ap-southeast-1.compute.amazonaws.com
 # Jadey's Bakery Project Proposal 🥖
 
 **Student ID:** 35505126  
-**IP Address: 52.220.28.88**  
+**IP Address:** 52.220.28.88  
 **© 2025 Jadey's Bakery**   
 **Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)**  
 
