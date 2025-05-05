@@ -1,0 +1,37 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 40px;	
+	background-colour: #fff8f0;
+}
+ header{
+ 	font-size: 2.5em;
+	font-weight:bold;
+	color: #b5651d;
+}
+.banner {
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+	margin-bottom: 20px;
+}
+nav ul {
+	list-style-type: none;
+	display: flex;
+	gap: 20px;
+	background-color: rgba(0,0,0,0.5);
+	padding: 10px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+section{
+	margin-top: 20px;
+	font-size: 1.2em;
+}
+footer{
+	margin-top: 40px;
+	font-size:0.9em;
+	color: #888;
+}
