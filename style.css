@@ -1,12 +1,42 @@
 body {
 	font-family: Arial, sans-serif;
 	margin: 40px;	
-	background-colour: #fff8f0;
+	background-color: #fff8f0;
 }
- header{
- 	font-size: 2.5em;
-	font-weight:bold;
-	color: #b5651d;
+ header {
+	background-color: #715c2c;
+	padding: 0;
+ }
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	padding: 0 20px;
+	background-color: #715c2c;
+}
+
+ul{
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	margin-right: 20px;
+}
+
+ul li a{
+	text-decoration: none;
+	color: #c8a775;
+	font-size: 18px;
+}
+
+#logo{
+	height: 80px;
+	width: auto;
 }
 .banner {
 	width: 100%;
@@ -14,18 +44,7 @@ body {
 	object-fit: cover;
 	margin-bottom: 20px;
 }
-nav ul {
-	list-style-type: none;
-	display: flex;
-	gap: 20px;
-	background-color: rgba(0,0,0,0.5);
-	padding: 10px;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+
 section{
 	margin-top: 20px;
 	font-size: 1.2em;
