@@ -39,7 +39,7 @@ ul li a{
 	width: auto;
 }
 .banner {
-	width: 100%;
+	width: 80%;
 	height: 100vh;
 	object-fit: cover;
 	margin-bottom: 20px;
