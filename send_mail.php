@@ -1,18 +1,37 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$name = htmlspecialchars($_POST['name']);
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 	$message = htmlspecialchars($_POST['message']);
 
-	$to = "your-email@example.com";  // Replace with your real email
-	$subject = "New Contact Form Submission from $name";
-	$body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
-	$headers = "From: $email";
+	$mail = new PHPMailer(true);
 
-	if (mail($to, $subject, $body, $headers)) {
+	try {
+		// SMTP settings for Amazon SES
+		$mail->isSMTP();
+		$mail->Host       = 'email-smtp.ap-southeast-1.amazonaws.com'; 
+		$mail->SMTPAuth   = true;
+		$mail->Username   = 'YOUR_SES_SMTP_USERNAME';
+		$mail->Password   = 'YOUR_SES_SMTP_PASSWORD';
+		$mail->SMTPSecure = 'tls';
+		$mail->Port       = 587;
+
+		$mail->setFrom('jadeysbakery.site', $name); // Must be a verified SES email
+		$mail->addAddress('jadeysbakery@gmail.com');       // Your receiving email
+		$mail->addReplyTo($email, $name);
+
+		$mail->Subject = "New Contact Form Submission from $name";
+		$mail->Body    = "Name: $name\nEmail: $email\n\nMessage:\n$message";
+
+		$mail->send();
 		echo "Thank you, $name. Your message has been sent.";
-	} else {
-		echo "Sorry, there was an error sending your message.";
+	} catch (Exception $e) {
+		echo "Sorry, there was an error sending your message. Mailer Error: {$mail->ErrorInfo}";
 	}
 } else {
 	echo "Invalid request.";
