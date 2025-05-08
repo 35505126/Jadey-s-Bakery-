@@ -61,3 +61,8 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 # 9. Build the website 🥸
 - Type the command "cd /var/www/html" into CLI.
 - Type the command "sudo nano 'change this into the file you want to access'" into CLI.
+
+# 10. Link Amazon SES
+- Enter your email address for the website.
+- Fill in your domain name and follow through with the set up process.
+- Verify your email address.
