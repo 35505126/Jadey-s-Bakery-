@@ -7,7 +7,7 @@ body {
 	background-color: #715c2c;
 	padding: 0;
  }
-
+/* --- Navigation Bar --- */
 nav {
 	display: flex;
 	align-items: center;
@@ -54,3 +54,47 @@ footer{
 	font-size:0.9em;
 	color: #888;
 }
+
+/* --- Oven Page --- */
+
+.productpage {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+  background-color: #fff8f0;
+}
+.product-page-h1 {
+  color: #b85c38;
+}
+.oven-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.oven {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.coming-soon {
+  width: 100%;
+  height: 200px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 1.2em;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.oven h2 {
+  font-size: 1.2em;
+  margin: 10px 0 5px;
+}
+.oven p {
+  color: #555;
+  font-size: 0.9em;
+}
+
