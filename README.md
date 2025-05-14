@@ -66,3 +66,4 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Enter your email address for the website.
 - Fill in your domain name and follow through with the set up process.
 - Verify your email address.
+- Add DKIM records to Route 53.
