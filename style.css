@@ -49,6 +49,25 @@ section{
 	margin-top: 20px;
 	font-size: 1.2em;
 }
+/* --- Recipe Upload on main page  --- */
+.recipe-promoting {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff4e6;
+  border-radius: 10px;
+  max-width: 600px;
+}
+.recipe-promoting .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  background: #715c2c;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
 footer{
 	margin-top: 40px;
 	font-size:0.9em;
