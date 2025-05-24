@@ -88,4 +88,6 @@ CREATE TABLE inventory (
   quantity INT NOT NULL DEFAULT 0
 );
 ```
-# 12. 
+# 12. Sources for Writing
+- https://stackoverflow.com/questions/65344947/pdo-insert-update-on-duplicate-key?
+- https://github.com/cp6/PHP-PDO-MySQL-cheat-sheet?
