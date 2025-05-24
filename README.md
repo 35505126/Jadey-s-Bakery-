@@ -88,6 +88,13 @@ CREATE TABLE inventory (
   quantity INT NOT NULL DEFAULT 0
 );
 ```
-# 12. Sources for Writing
+# 12. InstallDocker
+- Type the command ```sudo apt update```.
+- Type the command ```sudo apt install -y docker.io docker-compose-plugin```
+- Type the command ```sudo usermod -aG docker $USER```
+- Type the command ```mkdir ~/recipes```
+- Type the command ```cd ~/recipes```
+- Type the command ```nano docker-compose.yml```
+
 - https://stackoverflow.com/questions/65344947/pdo-insert-update-on-duplicate-key?
 - https://github.com/cp6/PHP-PDO-MySQL-cheat-sheet?
