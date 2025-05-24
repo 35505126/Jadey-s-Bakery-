@@ -1,7 +1,8 @@
 <?php
-// html/inventory.php
-require __DIR__.'/database.php';
+require 'database.php';
 
+$items = $pdo->query("SELECT sku,name,quantity FROM inventory ORDER BY sku")
+             ->fetchAll();
 // Handle add/update via POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $sku = strtoupper(trim($_POST['sku']));
