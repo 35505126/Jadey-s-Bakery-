@@ -1,9 +1,9 @@
 <?php
-// html/db.php
+// html/database.php
 $host   = '127.0.0.1';
-$db     = 'jadeys_bakery';
-$user   = 'bakery';
-$pass   = 'your_strong_password';
+$db     = 'jadey_bakery_database';
+$user   = 'username';
+$pass   = 'password';
 $charset= 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
