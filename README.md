@@ -36,8 +36,8 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 # 5. Connect to EC2
 - Go to EC2 dashboard and click connect.
 - Go into SSH client and follow the instructions under that tab.
-- Type the command "sudo apt update && sudo apt upgrade" into CLI.
-- Type the command "sudo apt install ssh apache2" into CLI.
+- Type the command '''sudo apt update && sudo apt upgrade''' into CLI.
+- Type the command '''sudo apt install ssh apache2''' into CLI.
 - Type the command "ip addr" and copy ip address into Elatic IP page in AWS.
 
 # 6. Set up static IP
@@ -45,22 +45,22 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Allocate Elastic IP address and associate it with EC2 instance.
 
 # 7. UFW
-- Type the command "sudo ufw allow ssh" into CLI. This allows incoming SSH connections.
-- Type the command "sudo ufw allow http" into CLI. This allows web traffic.
-- Type the command "sudo ufw allow https" into CLI. This allows secure web traffic.
-- Type the command "sudo ufw enable" into CLI. Enables firewall.
-- Verify the command "sudo ufw status verbose"
+- Type the command '''sudo ufw allow ssh''' into CLI. This allows incoming SSH connections.
+- Type the command '''sudo ufw allow http''' into CLI. This allows web traffic.
+- Type the command '''sudo ufw allow https''' into CLI. This allows secure web traffic.
+- Type the command '''sudo ufw enable''' into CLI. Enables firewall.
+- Verify the command '''sudo ufw status verbose'''.
 
 # 8. Install SSL with Certbot
-- Type the command "sudo snap install core" into CLI. This allows installs snap.
-- Type the command "sudo snap refresh core" into CLI. 
-- Type the command "sudo snap install --classic certbot" into CLI. This installs in classic mode.
-- Type the command "sudo certbot --apache" into CLI. This automatically obtains and installs an SSL certificate for the apache server.
-- Type the command "sudo certbot renew --dry-run" into CLI. This simulate the automatic renewal process to verify it works.
+- Type the command '''sudo snap install core''' into CLI. This allows installs snap.
+- Type the command '''sudo snap refresh core''' into CLI. 
+- Type the command '''sudo snap install --classic certbot''' into CLI. This installs in classic mode.
+- Type the command '''sudo certbot --apache''' into CLI. This automatically obtains and installs an SSL certificate for the apache server.
+- Type the command '''sudo certbot renew --dry-run''' into CLI. This simulate the automatic renewal process to verify it works.
  
 # 9. Build the website 🥸
-- Type the command "cd /var/www/html" into CLI.
-- Type the command "sudo nano 'change this into the file you want to access'" into CLI.
+- Type the command '''cd /var/www/html''' into CLI.
+- Type the command '''sudo nano 'change this into the file you want to access'''' into CLI.
 
 # 10. Link Amazon SES
 - Enter your email address for the website.
@@ -69,6 +69,7 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Add DKIM records to Route 53.
 
 # 11. Download MySQL on Ubuntu EC2
-- Type the command "sudo apt update"
-- Type the command "sudo apt install mysql-server -y"
-- Type the command "sudo mysql_secure_installation"
+- Type the command '''sudo apt update'''.
+- Type the command '''sudo apt install mysql-server -y'''.
+- Type the command '''sudo mysql_secure_installation'''.
+- Make sure you set up a strong root password, remove anonymous users, disallow remote root login, remove test database and reload priviledge tables.
