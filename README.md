@@ -72,6 +72,7 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Type the command ```sudo apt update```.
 - Type the command ```sudo apt install mysql-server -y```.
 - Type the command ```sudo mysql_secure_installation```.
+- Type the command ```sudo apt install php libapache2-mod-php php-mysql```
 - Make sure you set up a strong root password, remove anonymous users, disallow remote root login, remove test database and reload priviledge tables.
 - Log in as root user type the command ```sudo mysql -u root -p```.
 - Type these commands:
