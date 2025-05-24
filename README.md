@@ -75,6 +75,7 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Make sure you set up a strong root password, remove anonymous users, disallow remote root login, remove test database and reload priviledge tables.
 - Log in as root user type the command ```sudo mysql -u root -p```.
 - Type these commands:
+- Explanation: They will create a table of inventory storing a numerical ID that increments with each row, SKU that stores up to 50 characters, name that can be up to 255 characters and the quantity of the integers.
 ```sql
 CREATE DATABASE jadeys_bakery;
 USE jadeys_bakery;
@@ -85,6 +86,5 @@ CREATE TABLE inventory (
   name VARCHAR(255) NOT NULL,
   quantity INT NOT NULL DEFAULT 0
 );
-
-###Explanation:
-- They will create a table of inventory storing a numerical ID that increments with each row, SKU that stores up to 50 characters, name that can be up to 255 characters and the quantity of the integers.
+```
+# 12. 
