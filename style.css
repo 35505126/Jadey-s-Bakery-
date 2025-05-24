@@ -42,6 +42,7 @@ nav ul li a {
 .main-page-banner {
 	width: 100%;
 	height: auto;
+	justify-content: center;
 	object-fit: cover;
 	display: block;
 	margin: 0 auto 20px;
