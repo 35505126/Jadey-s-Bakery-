@@ -1,6 +1,6 @@
 <?php
 // html/inventory.php
-require __DIR__.'/db.php';
+require __DIR__.'/database.php';
 
 // Handle add/update via POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
