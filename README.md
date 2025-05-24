@@ -84,4 +84,5 @@ CREATE TABLE inventory (
   name VARCHAR(255) NOT NULL,
   quantity INT NOT NULL DEFAULT 0
 );``` 
-They will create a table of inventory storing a numerical ID that increments with each row, SKU that stores up to 50 characters, name that can be up to 255 characters and the quantity of the integers.
+
+- They will create a table of inventory storing a numerical ID that increments with each row, SKU that stores up to 50 characters, name that can be up to 255 characters and the quantity of the integers.
