@@ -73,3 +73,15 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Type the command ```sudo apt install mysql-server -y```.
 - Type the command ```sudo mysql_secure_installation```.
 - Make sure you set up a strong root password, remove anonymous users, disallow remote root login, remove test database and reload priviledge tables.
+- Log in as root user type the command ```sudo mysql -u root -p```.
+- Type these commands:
+```CREATE DATABASE jadeys_bakery;
+USE jadeys_bakery;
+
+CREATE TABLE inventory (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  sku VARCHAR(50) NOT NULL UNIQUE,
+  name VARCHAR(255) NOT NULL,
+  quantity INT NOT NULL DEFAULT 0
+);``` 
+They will create a table of inventory storing a numerical ID that increments with each row, SKU that stores up to 50 characters, name that can be up to 255 characters and the quantity of the integers.
