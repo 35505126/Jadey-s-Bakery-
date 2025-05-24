@@ -67,3 +67,8 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Fill in your domain name and follow through with the set up process.
 - Verify your email address.
 - Add DKIM records to Route 53.
+
+# 11. Download MySQL on Ubuntu EC2
+- Type the command "sudo apt update"
+- Type the command "sudo apt install mysql-server -y"
+- Type the command "sudo mysql_secure_installation"
