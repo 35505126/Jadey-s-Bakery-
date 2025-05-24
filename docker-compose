@@ -1,0 +1,34 @@
+mkdir ~/recipes && cd ~/recipes
+cat > docker-compose.yml <<'EOF'
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.4
+    restart: always
+    environment:
+      MYSQL_DATABASE: wp
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppass
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes: [ "db_data:/var/lib/mysql" ]
+
+  wordpress:
+    image: wordpress:php8.3-apache
+    restart: always
+    ports: [ "80:80" ]          # swap 80 for 8080 if Nginx already listens on 80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppass
+      WORDPRESS_DB_NAME: wp
+    volumes: [ "wp_data:/var/www/html" ]
+
+volumes:
+  db_data:
+  wp_data:
+EOF
+
+sudo apt update && sudo apt install -y docker docker-compose-plugin
+sudo usermod -aG docker $USER && newgrp docker
+docker compose up -d
