@@ -1,3 +1,40 @@
-function onScanSuccess(code) {
-  window.location.href = `inventory.php?scan=${encodeURIComponent(code)}`;
-}
+<!--Sources: https://scanbot.io/techblog/html5-barcode-scanner-tutorial/ https://blog.minhazav.dev/QR-and-barcode-scanner-using-html-and-javascript/ https://openjavascript.info/2022/12/10/qr-code-scanner-with-html5-qrcode-js/-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scan SKU</title>
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 20px; }
+    #reader { width: 300px; margin: 0 auto; }
+    #result { margin-top: 20px; font-size: 18px; color: green; }
+  </style>
+</head>
+<body>
+  <h1>📦 Scan a Product SKU</h1>
+  <div id="reader"></div>
+  <div id="result">Waiting for scan...</div>
+
+  <script>
+    function onScanSuccess(decodedText, decodedResult) {
+      document.getElementById("result").innerText = "Scanned: " + decodedText;
+
+      // Redirect to inventory.php with scanned code
+      setTimeout(() => {
+        window.location.href = "inventory.php?scan=" + encodeURIComponent(decodedText);
+      }, 1000); // Wait 1 sec so the user sees the result
+    }
+
+    // Start the scanner
+    const html5QrCode = new Html5Qrcode("reader");
+    html5QrCode.start(
+      { facingMode: "environment" }, // Use back camera on phones
+      {
+        fps: 10,
+        qrbox: { width: 250, height: 250 }
+      },
+      onScanSuccess
+    );
+  </script>
+</body>
+</html>
