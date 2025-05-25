@@ -90,11 +90,30 @@ CREATE TABLE inventory (
 ```
 # 12. InstallDocker
 - Type the command ```sudo apt update```.
-- Type the command ```sudo apt install -y docker.io docker-compose-plugin```
+- Type the command ```sudo apt install -y docker.io docker-compose```
+- ```sudo apt install -y ca-certificates curl gnupg lsb-release```
 - Type the command ```sudo usermod -aG docker $USER```
 - Type the command ```mkdir ~/recipes```
 - Type the command ```cd ~/recipes```
-- Type the command ```nano docker-compose.yml```
+- Type the command ```nano docker-compose.yml``` I followed these links for set up. https://docs.docker.com/compose/ https://docs.docker.com/compose/compose-file/ https://www.geeksforgeeks.org/docker-compose/
+- 
+- ```python3 -c "import secrets; print(secrets.token_urlsafe(64))"``` to generate a secret key.
+- ```sudo .env```Paste the key into the folder.
+- ```docker --version```
+- ```docker compose version```
+- ```docker compose up -d```
+- ```docker ps``` Check the container is running.
+- ```sudo systemctl start docker``` Start the Docker daemon.
+- ```sudo systemctl status docker``` To verify it is running.
+- ```docker exec -it recipes-web-1 python manage.py createsuperuser``` to create a admin login. Enter your username, email address and password.
+
+- 
+
+
+
+- 
+
+- 
 
 - https://stackoverflow.com/questions/65344947/pdo-insert-update-on-duplicate-key?
 - https://github.com/cp6/PHP-PDO-MySQL-cheat-sheet?
