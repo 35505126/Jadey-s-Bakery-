@@ -59,7 +59,8 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Type the command ```sudo certbot renew --dry-run``` into CLI. This simulate the automatic renewal process to verify it works.
  
 # 9. Build the website 🥸
-- Type the command ```cd /var/www/html``` into CLI.
+- Type the command ```sudo apt update
+sudo apt upgrade -y``` into CLI.
 - Type the command ```sudo nano 'change this into the file you want to access``` into CLI.
 
 # 10. Link Amazon SES
