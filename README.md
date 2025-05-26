@@ -57,26 +57,25 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Type the command ```sudo snap install --classic certbot``` into CLI. This installs in classic mode.
 - Type the command ```sudo certbot --apache``` into CLI. This automatically obtains and installs an SSL certificate for the apache server.
 - Type the command ```sudo certbot renew --dry-run``` into CLI. This simulate the automatic renewal process to verify it works.
- 
-# 9. Build the website 🥸
-- Type the command ```sudo apt update
-sudo apt upgrade -y``` into CLI.
-- Type the command ```sudo nano 'change this into the file you want to access``` into CLI.
 
-# 10. Link Amazon SES
-- Enter your email address for the website.
-- Fill in your domain name and follow through with the set up process.
-- Verify your email address.
-- Add DKIM records to Route 53.
-
-# 11. Download MySQL on Ubuntu EC2
+# 9. Download MySQL on Ubuntu EC2
 - Type the command ```sudo apt update```.
 - Type the command ```sudo apt install mysql-server -y```.
 - Type the command ```sudo mysql_secure_installation```.
-- Type the command ```sudo apt install php libapache2-mod-php php-mysql```
+- Type the command ```sudo apt install php libapache2-mod-php php-mysql``` to install php.
 - Make sure you set up a strong root password, remove anonymous users, disallow remote root login, remove test database and reload priviledge tables.
-- Log in as root user type the command ```sudo mysql -u root -p```.
-- Type these commands:
+- Log in to sql with the command ```sudo mysql```.
+- Type these commands replacing the password.
+- Type the command ```CREATE DATABASE wordpress;```
+- Type the command ```CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'Password';```
+- Type the command ```GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'localhost';```
+- Type the command ```FLUSH PRIVILEGES;```
+- Type the command ```EXIT;```
+- Type the command ```cd /tmp``` then ```wget https://wordpress.org/latest.tar.gz```
+- Unzip the file ```tar -xvzf latest.tar.gz```
+- ```sudo cp -a wordpress/. /var/www/html/``` move the wordpress folder into apache root file.
+
+- 
 - Explanation: They will create a table of inventory storing a numerical ID that increments with each row, SKU that stores up to 50 characters, name that can be up to 255 characters and the quantity of the integers. Source: https://github.com/Luna-390/PHP-Barcode-Reader/blob/master/database.sql
 ```sql
 CREATE DATABASE jadeys_bakery;
@@ -89,6 +88,19 @@ CREATE TABLE inventory (
   quantity INT NOT NULL DEFAULT 0
 );
 ```
+ 
+# 10. Download Wordpress 🥸
+- Type the command ```sudo apt update``` & then ```sudo apt upgrade -y``` into CLI.
+- 
+- Type the command ```sudo nano 'change this into the file you want to access``` into CLI.
+
+# 10. Link Amazon SES
+- Enter your email address for the website.
+- Fill in your domain name and follow through with the set up process.
+- Verify your email address.
+- Add DKIM records to Route 53.
+
+
 # 12. InstallDocker
 - Type the command ```sudo apt update```.
 - Type the command ```sudo apt install -y docker.io docker-compose```
