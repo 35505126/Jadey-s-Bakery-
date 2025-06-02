@@ -58,7 +58,7 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Type the command ```sudo certbot --apache``` into CLI. This automatically obtains and installs an SSL certificate for the apache server.
 - Type the command ```sudo certbot renew --dry-run``` into CLI. This simulate the automatic renewal process to verify it works.
 
-# 9. Download MySQL on Ubuntu EC2
+# 9. Download MySQL & wordpress on Ubuntu EC2 🥸
 - Type the command ```sudo apt update```.
 - Type the command ```sudo apt install mysql-server -y```.
 - Type the command ```sudo mysql_secure_installation```.
@@ -89,16 +89,40 @@ CREATE TABLE inventory (
 );
 ```
  
-# 10. Download Wordpress 🥸
-- Type the command ```sudo apt update``` & then ```sudo apt upgrade -y``` into CLI.
-- 
-- Type the command ```sudo nano 'change this into the file you want to access``` into CLI.
+# 11. Wordpress 🥸
+- Choose a template and start establishing your website's homepage.
 
-# 10. Link Amazon SES
+# 12. WP Recipe Maker
+- Install a plugin on wordpress page called WP Recipe Maker.
+- Activate plugin.
+- Choose the wordpress editor for the plugin.
+- Go to pages.
+- Add a page and name it "Recipes".
+- Click the + on the top left.
+- Drag and drop "WPRM Recipe" and "Recipe snippet" to the page
+
+# 13. WP User Frontend
+- Install WP User Frontend plugin.
+- Create your first form: Submit Recipe Form
+- Edit the form and add recipe title, upload picture, ingredients list, instructions and ratings.
+
+# 14. Link Amazon SES
 - Enter your email address for the website.
 - Fill in your domain name and follow through with the set up process.
 - Verify your email address.
 - Add DKIM records to Route 53.
+
+# 15. Edit contact us form and link to SES.
+
+- Add all the fields require in WP form: Name, email and message.
+- Go to the “Notifications” tab on the left to confirm where the emails are sent.
+- Send to your email address, name email subject.
+- Install WP Mail SMTP from Plugins > Add New
+
+  
+
+
+
 
 
 # 12. InstallDocker
