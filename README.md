@@ -97,7 +97,7 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Unzip the file ```tar -xvzf latest.tar.gz```
 - ```sudo cp -a wordpress/. /var/www/html/``` move the wordpress folder into apache root file.
 
-- 
+
 - Explanation: They will create a table of inventory storing a numerical ID that increments with each row, SKU that stores up to 50 characters, name that can be up to 255 characters and the quantity of the integers. Source: https://github.com/Luna-390/PHP-Barcode-Reader/blob/master/database.sql
 ```sql
 CREATE DATABASE jadeys_bakery;
@@ -134,12 +134,18 @@ CREATE TABLE inventory (
 - Verify your email address.
 - Add DKIM records to Route 53.
 
-# 15. Edit contact us form and link to SES.
+# 15. Set up contact us form and link to SES.
+Followed: https://github.com/PHPMailer/PHPMailer  https://docs.aws.amazon.com/ses/latest/dg/send-email-smtp.html
+- On EC2 instance:
+- ```cd /var/www/html```
+- ```sudo mkdir -p phpmailer```
+```cd phpmailer```
+```sudo wget https://github.com/PHPMailer/PHPMailer/archive/refs/heads/master.zip```
+```sudo apt install unzip -y```
+```sudo unzip master.zip```
+```mv PHPMailer-master/* .```
+```rm -rf PHPMailer-master master.zip```
 
-- Add all the fields require in WP form: Name, email and message.
-- Go to the “Notifications” tab on the left to confirm where the emails are sent.
-- Send to your email address, name email subject.
-- Install WP Mail SMTP from Plugins > Add New
 
   
 
