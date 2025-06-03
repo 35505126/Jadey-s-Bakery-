@@ -11,6 +11,28 @@ ssh -i yungling.pem ubuntu@ec2-52-220-28-88.ap-southeast-1.compute.amazonaws.com
 **Project Overview:**
 The aim of the project is to create a IaaS that enables multifaceted usage within the sphere of baking to a wide variety of stakeholders. Jadey’s Bakery is the home of sourdoughs for the soul, secret recipes, and organic ingredients. Whether you’re an Individual chasing the next flavour hit, a business looking to purchase/supply ingredients, or a hobbyist with untold recipes, Jadey's bakery kneads all realms of baked goodness in one place. Partnerships with local businesses to purchase baking equipment and quality produce is advanced through an online SaaS that connects suppliers, and customers through an interactive open platform. Customers can leave feedback on ingredients, share ideas, post photos, comment, rate, and review recipes. Inventory tracker software boosts efficiency by streamlining orders on products, saving the need for manual ordering or forgetful minds. Implementation of algorithms that tailor to specific health needs make selecting specific recipes, ingredients, or products faster and easier. The online website will provide fast delivery options, as well as a local pickup storefront that online orders can be collected from. This will maximise efficiency for stakeholders as well as giving a chance to interact in person with the bakery storefront, something that is missing in a purely digital online store. Connectivity through baking is the central theme of Jadey’s Bakery, providing an interactive baking website, as such a monthly leaderboard for the best sourdough will be posted and shared. This will promote sharing of ideas and inspire competition, with the grand reward of publicity, as a business or individual. A membership program will also be provided where local businesses will receive a discount on monthly orders, while individuals receive discount coupons on individual orders.
 
+## Jadey’s Bakery – Project Timeline
+
+**Week 1 (May 10–17):**
+- Created initial static HTML layout
+- Planned site features
+- Started GitHub tracking
+
+**Week 2 (May 17–24):**
+- Switched to WordPress for scalability
+- Installed Astra theme
+- Set up basic pages and navigation
+
+**Week 3 (May 24–31):**
+- Integrated AWS SES for contact form
+- Set up SSL with Let’s Encrypt
+- Started inventory tracking PHP script
+
+**Week 4 (June 1–7):**
+- Finalized theme and styling
+- Fixed HTTPS redirection
+- Configured domain + cleaned WordPress
+
 # 1. Launch EC2 instance in AWS
 - Launch an instance in Asia Pacific (Singapore).
 - Allocate a name, Amazon Machine Image (Ubuntu), instance type (t2.micro), generate a key pair and add a security group that allows SSH (22), HTTP (80), HTTPS(443)
