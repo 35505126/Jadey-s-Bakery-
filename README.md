@@ -146,6 +146,14 @@ Followed: https://github.com/PHPMailer/PHPMailer  https://docs.aws.amazon.com/se
 ```mv PHPMailer-master/* .```
 ```rm -rf PHPMailer-master master.zip```
 
+```sudo nano /var/www/html/send_mail.php```
+
+- Go to AWS SES Console.
+- Go to SMTP Settings.
+- Click "Create SMTP Credentials"
+- Download the username and password.
+- Put it in send_mail.php file
+
 
   
 
