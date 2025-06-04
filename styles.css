@@ -1,0 +1,59 @@
+nav {
+  display: flex;
+  align-items: center;
+  background-color: #715c2c;
+  height: 80px;
+  padding: 0 20px;
+}
+
+#logo {
+  height: 70px;
+  margin-right: 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #c8a775;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.recipe-promoting {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff4e6;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  background: #715c2c;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #8a6d3b;
+}
