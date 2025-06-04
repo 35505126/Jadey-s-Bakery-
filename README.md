@@ -137,16 +137,15 @@ CREATE TABLE inventory (
 # 15. Set up contact us form and link to SES.
 Followed: https://github.com/PHPMailer/PHPMailer  https://docs.aws.amazon.com/ses/latest/dg/send-email-smtp.html
 - On EC2 instance:
-- ```cd /var/www/html```
-- ```sudo mkdir -p phpmailer```
-```cd phpmailer```
-```sudo wget https://github.com/PHPMailer/PHPMailer/archive/refs/heads/master.zip```
-```sudo apt install unzip -y```
-```sudo unzip master.zip```
-```mv PHPMailer-master/* .```
-```rm -rf PHPMailer-master master.zip```
-
-```sudo nano /var/www/html/send_mail.php```
+- Type the command ```cd /var/www/html```
+- Type the command ```sudo mkdir -p phpmailer```
+- Type the command ```cd phpmailer```
+- Type the command ```sudo wget https://github.com/PHPMailer/PHPMailer/archive/refs/heads/master.zip```
+- Type the command ```sudo apt install unzip -y```
+- Type the command ```sudo unzip master.zip```
+- Type the command ```mv PHPMailer-master/* .```
+- Type the command ```rm -rf PHPMailer-master master.zip```
+- Type the command ```sudo nano /var/www/html/send_mail.php```
 
 - Go to AWS SES Console.
 - Go to SMTP Settings.
@@ -154,6 +153,18 @@ Followed: https://github.com/PHPMailer/PHPMailer  https://docs.aws.amazon.com/se
 - Download the username and password.
 - Put it in send_mail.php file
 
+# Backing up wordpress and other scripting files.
+- Type the command ```sudo apt update```
+- - Type the command ```sudo apt install zip -y```
+- Type the command ```cd /var/www/html```
+- Type the command ```crontab -e```
+- - Select '1'
+- Type this in and change **YourPassword**.  ```30 2 * * * mysqldump -u root -p**YourPassword** wordpress | tee /home/ubuntu/wordpress-db-$(date +\%F).sql > /dev/null && tar -czf /home/ubuntu/wordpress-files-$(date +\%F).tar.gz -C /var/www html```
+
+
+- 
+
+- 
 
   
 
