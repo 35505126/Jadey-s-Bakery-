@@ -1,5 +1,3 @@
-ssh -i yungling.pem ubuntu@ec2-52-220-28-88.ap-southeast-1.compute.amazonaws.com
-
 # Jadey's Bakery Project Proposal 🥖
 
 **Student ID:** 35505126  
@@ -24,14 +22,31 @@ The aim of the project is to create a IaaS that enables multifaceted usage withi
 - Set up basic pages and navigation
 
 **Week 3 (May 24–31):**
-- Integrated AWS SES for contact form
+- Integrated AWS SES with .php scripts
 - Set up SSL with Let’s Encrypt
 - Started inventory tracking PHP script
+- Started timer for sourdough baking tracking
 
 **Week 4 (June 1–7):**
 - Finalized theme and styling
 - Fixed HTTPS redirection
 - Configured domain + cleaned WordPress
+
+**Scripting components and explanation:**
+Sourdough clock: Automatic timer to remind users of when to attend to their dough.
+https://github.com/siamcomm/simple-countdown-timer/blob/master/script.js
+https://github.com/sanjudhritlahre/JS-CountDown-Timer
+https://javascript.info/settimeout-setinterval
+https://www.geeksforgeeks.org/java-script-settimeout-setinterval-method/
+
+Contact form: Option to contact the business.
+
+VPN: 
+
+Upload recipe automatically for customers.
+
+Additional notes:
+Most of my work was done in test branch so that is where you will see proof for working on the project over a month. A lot of trial, error and changes has been implemented but this main branch backs up all my final work.
 
 # 1. Launch EC2 instance in AWS
 - Launch an instance in Asia Pacific (Singapore).
