@@ -21,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$mail->SMTPSecure = 'tls';
 		$mail->Port       = 587;
 
-		$mail->setFrom('jadeysbakery.site', $name); // Must be a verified SES email
-		$mail->addAddress('jadeysbakery@gmail.com');       // Your receiving email
+		$mail->setFrom('jadeysbakery.site', $name); // SES email
+		$mail->addAddress('jadeysbakery@gmail.com');       // Receiving email
 		$mail->addReplyTo($email, $name);
 
 		$mail->Subject = "New Contact Form Submission from $name";
