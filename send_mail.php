@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$mail->Port       = 587;
 
 		$mail->setFrom('noreply@jadeysbakery.site', $name); // Must be a verified SES email
-		$mail->addAddress('jadeysbakery@gmail.com');       // Your receiving email
+		$mail->addAddress('jadeysbakeryy@gmail.com');       // Your receiving email
 		$mail->addReplyTo($email, $name);
 
 		$mail->Subject = "New Contact Form Submission from $name";

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sourdough Timer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="recipe-promoting">
+    <h1>🥖 Sourdough Schedule Reminder</h1>
+    <button class="btn" onclick="startSchedule()">Start Sourdough Schedule</button>
+    <div id="countdown">Waiting to start...</div>
+    <audio id="beep" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
+  </div>
+
+  <script>
+    const steps = [
+      { label: "Autolyse (12 hours)", hours: 12, minutes: 0 },
+      { label: "Rest (30 minutes)", hours: 0, minutes: 30 },
+      { label: "Rest (30 minutes)", hours: 0, minutes: 30 },
+      { label: "Rest (30 minutes)", hours: 0, minutes: 30 },
+      { label: "1st Coil Fold (45 minutes)", hours: 0, minutes: 45 },
+      { label: "2nd Coil Fold (45 minutes)", hours: 0, minutes: 45 },
+      { label: "3rd Coil Fold (45 minutes)", hours: 0, minutes: 45 },
+    ];
+
+    let currentStep = 0;
+    let interval;
+    let endTime;
+
+    function startSchedule() {
+      if (currentStep >= steps.length) {
+        document.getElementById('countdown').textContent = "All steps complete!";
+        return;
+      }
+      runStep();
+    }
+
+    function runStep() {
+      const step = steps[currentStep];
+      const duration = (step.hours * 60 + step.minutes) * 60 * 1000;
+      endTime = Date.now() + duration;
+
+      clearInterval(interval);
+      interval = setInterval(() => updateCountdown(step), 1000);
+    }
+
+    function updateCountdown(step) {
+      const now = Date.now();
+      const diff = endTime - now;
+
+      if (diff <= 0) {
+        document.getElementById('beep').play();
+        clearInterval(interval);
+        currentStep++;
+        runStep();
+        return;
+      }
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('countdown').textContent =
+        `${step.label} - ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+  </script>
+</body>
+</html>

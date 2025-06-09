@@ -15,8 +15,8 @@
       <ul>
         <li><a href="https://jadeysbakery.site">Home</a></li>
         <li><a href="contact.php">Contact</a></li>
-        <li><a href="https://jadeysbakery.site/submit-a-recipe">Post your recipes!</a></li>
-        <li><a href="#">Products</a></li>
+        <li><a href="https://jadeysbakery.site/post-your-recipes/">Post your recipes!</a></li>
+        <li><a href="https://jadeysbakery.site/sourdough_timer.html">Sourdough Schedule Reminder</a></li>
       </ul>
     </nav>
   </header>
