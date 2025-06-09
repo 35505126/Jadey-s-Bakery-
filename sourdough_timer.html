@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!-- Header with Logo and Navigation -->
+<header>
+  <nav>
+    <img src="/assets/images/logo2.png" alt="Jadey's Bakery Logo" id="logo">
+
+    <ul>
+      <li><a href="https://jadeysbakery.site">Home</a></li>
+      <li><a href="contact.php">Contact</a></li>
+      <li><a href="https://jadeysbakery.site/post-your-recipes/">Post Your Recipe</a></li>
+      <li><a href="https://jadeysbakery.site/sourdough_timer.html">Sourdough Timer</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <title>Sourdough Timer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="recipe-promoting">
+    <h1>🥖 Sourdough Schedule Reminder</h1>
+    <button class="btn" onclick="startSchedule()">Start Sourdough Schedule</button>
+    <div id="countdown">Waiting to start...</div>
+    <audio id="beep" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
+  </div>
+
+  <script>
+// Define each stage of the sourdough process.
+// Each step includes a label, and a duration in hours and minutes.
+const steps = [
+  { label: "Autolyse (12 hours)", hours: 12, minutes: 0 },
+  { label: "Rest (30 minutes)", hours: 0, minutes: 30 },
+  { label: "Rest (30 minutes)", hours: 0, minutes: 30 },
+  { label: "Rest (30 minutes)", hours: 0, minutes: 30 },
+  { label: "1st Coil Fold (45 minutes)", hours: 0, minutes: 45 },
+  { label: "2nd Coil Fold (45 minutes)", hours: 0, minutes: 45 },
+  { label: "3rd Coil Fold (45 minutes)", hours: 0, minutes: 45 },
+];
+
+// Keeps track of the current stage in the process
+let currentStep = 0;
+
+// Used to hold the timer so we can stop/reset it between steps
+let interval;
+
+// The exact time at which the current stage should finish
+let endTime;
+
+/**
+ * Starts the schedule from the given step index.
+ * Defaults to 0 (beginning) if no index is provided.
+ */
+function startSchedule(startIndex = 0) {
+  currentStep = startIndex;
+
+  // If user somehow tries to start beyond the last step
+  if (currentStep >= steps.length) {
+    document.getElementById('countdown').textContent = "All steps complete!";
+    return;
+  }
+
+  runStep(); // Start the current step
+}
+
+/**
+ * Begins the countdown for the current step.
+ */
+function runStep() {
+  const step = steps[currentStep]; // Get current step object
+
+  // Calculate the total duration of the step in milliseconds
+  const duration = (step.hours * 60 + step.minutes) * 60 * 1000;
+
+  // Set the time at which this step will end
+  endTime = Date.now() + duration;
+
+  // Clear any existing timers (if restarting)
+  clearInterval(interval);
+
+  // Set up a 1-second interval to update the countdown display
+  interval = setInterval(() => updateCountdown(step), 1000);
+}
+
+/**
+ * Updates the countdown display based on time left.
+ * When time reaches zero, it moves to the next step and plays a beep.
+ */
+function updateCountdown(step) {
+  const now = Date.now();           // Current timestamp
+  const diff = endTime - now;       // Milliseconds remaining in the step
+
+  // If time is up for the current step
+  if (diff <= 0) {
+    document.getElementById('beep').play(); // Play notification sound
+    clearInterval(interval);               // Stop current interval
+    currentStep++;                         // Move to next step
+    runStep();                             // Start next step
+    return;
+  }
+
+  // Convert milliseconds remaining to hours, minutes, seconds
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  // Update the countdown text with padded time values (e.g., 01:05:09)
+  document.getElementById('countdown').textContent =
+    `${step.label} - ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+/**
+ * When the page loads, generate a button for each stage.
+ * Clicking a button allows the user to jump directly to that step.
+ */
+window.onload = function () {
+  const container = document.getElementById("stageButtonContainer");
+
+  steps.forEach((step, index) => {
+    const btn = document.createElement("button");
+    btn.textContent = step.label;      // Set button label
+    btn.className = "small-btn";       // Style class
+    btn.onclick = () => startSchedule(index); // Set click handler
+    container.appendChild(btn);        // Add button to container
+  });
+};
+  </script>
+</body>
+</html>
