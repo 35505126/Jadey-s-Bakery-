@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$mail = new PHPMailer(true);
 
 	try {
-		// SMTP settings for Amazon SES
 		$mail->isSMTP();
 		$mail->Host       = 'email-smtp.ap-southeast-1.amazonaws.com'; 
 		$mail->SMTPAuth   = true;
@@ -23,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$mail->SMTPSecure = 'tls';
 		$mail->Port       = 587;
 
-		$mail->setFrom('noreply@jadeysbakery.site', $name); // Must be a verified SES email
-		$mail->addAddress('jadeysbakeryy@gmail.com');       // Your receiving email
+		$mail->setFrom('noreply@jadeysbakery.site', $name); 
+		$mail->addAddress('jadeysbakeryy@gmail.com');      
 		$mail->addReplyTo($email, $name);
 
 		$mail->Subject = "New Contact Form Submission from $name";
