@@ -1,0 +1,36 @@
+# ------------------------
+# Ignore WordPress Core
+# ------------------------
+wp-admin/
+wp-includes/
+wp-content/
+index.php
+readme.html
+license.txt
+.htaccess
+xmlrpc.php
+wp-*.php
+
+# ------------------------
+# Ignore Sensitive Config and Backup Files
+# ------------------------
+wp-config.php
+*.sql
+*.zip
+*.tar.gz
+*.tar
+*.log
+
+# ------------------------
+# Ignore Libraries
+# ------------------------
+phpmailer/
+
+# ------------------------
+# Only Track Your Custom Files
+# ------------------------
+!sourdough_timer.html
+!send_mail.php
+!styles.css
+!contact.php
+!assets/
